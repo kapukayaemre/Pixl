@@ -1,25 +1,25 @@
 {
-  "name": "pixl",
-  "version": "1.0.0",
-  "main": "index.js",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "format": "prettier --write \"**/*.{html,js,css,json}\"",
-    "format:check": "prettier --check \"**/*.{html,js,css,json}\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "devDependencies": {
-    "vite": "^7.2.4"
-  },
-  "dependencies": {
-    "@tailwindcss/vite": "^4.1.17",
-    "prettier": "^3.7.2",
-    "prettier-plugin-tailwindcss": "^0.7.1",
-    "tailwindcss": "^4.1.17"
-  }
+    "name": "pixl",
+    "version": "1.0.0",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "format": "prettier --write \"**/*.{html,js,css,json}\"",
+        "format:check": "prettier --check \"**/*.{html,js,css,json}\"",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "description": "",
+    "devDependencies": {
+        "vite": "^7.2.4"
+    },
+    "dependencies": {
+        "@tailwindcss/vite": "^4.1.17",
+        "prettier": "^3.7.2",
+        "prettier-plugin-tailwindcss": "^0.7.1",
+        "tailwindcss": "^4.1.17"
+    }
 }
