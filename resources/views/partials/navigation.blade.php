@@ -72,7 +72,7 @@
     <!-- User controls -->
     <div class="flex gap-3.5">
         <a href="/profile" class="shrink-0">
-            <img src="{{ asset('images/adrian.png') }}" alt="Avatar of Adrian" class="size-11 object-cover" />
+            <img src="{{ Vite::asset('resources/images/adrian.png') }}" alt="Avatar of Adrian" class="size-11 object-cover" />
         </a>
 
         <div class="flex flex-col gap-1 text-sm">

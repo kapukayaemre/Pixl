@@ -10,7 +10,7 @@
 <body class="bg-pixl-dark text-pixl-light relative flex h-dvh w-full flex-col md:block md:overflow-clip">
 <!-- Background image -->
 <div class="fixed inset-0 overflow-clip">
-    <img src="{{ asset('images/Official-Login-BG.png') }}" alt="" class="absolute inset-y-0 left-[15%] h-full w-full mask-l-from-80% object-cover opacity-30" />
+    <img src="{{ Vite::asset('resources/images/Official-Login-BG.png') }}" alt="" class="absolute inset-y-0 left-[15%] h-full w-full mask-l-from-80% object-cover opacity-30" />
 </div>
 
 <main class="isolate mx-auto grid max-w-[1000px] flex-grow place-items-center px-8 max-md:pt-16 md:h-full xl:max-w-6xl">
@@ -117,7 +117,7 @@
     </div>
 
     <!-- White noise -->
-    <div class="absolute inset-x-0 bottom-0 h-4 bg-[url('/public/images/white-noise.gif')]"></div>
+    <div class="absolute inset-x-0 bottom-0 h-4 bg-[url('/resources/images/white-noise.gif')]"></div>
 
     <!-- Pictogram -->
     <svg class="absolute right-4 bottom-8 w-7 grayscale max-sm:hidden" viewBox="0 0 29 43" xmlns="http://www.w3.org/2000/svg" fill="none">

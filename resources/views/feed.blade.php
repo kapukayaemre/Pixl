@@ -22,7 +22,7 @@
         <!-- Post prompt -->
         <div class="border-pixl-light/10 mt-8 flex items-start gap-4 border-b pb-4">
             <a href="/profile">
-                <img src="{{ asset('images/adrian.png') }}" alt="Avatar for Adrian" class="size-10 object-cover" />
+                <img src="{{ Vite::asset('resources/images/adrian.png') }}" alt="Avatar for Adrian" class="size-10 object-cover" />
             </a>
 
             @include('partials.post-form', [
@@ -44,7 +44,7 @@
             <p class="text-center">That's all, folks!</p>
             <hr class="border-pixl-light/10 my-4" />
             <!-- White noise -->
-            <div class="h-20 bg-[url('/public/images/white-noise.gif')]"></div>
+            <div class="h-20 bg-[url('/resources/images/white-noise.gif')]"></div>
         </footer>
     </main>
 

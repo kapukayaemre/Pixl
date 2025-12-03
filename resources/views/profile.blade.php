@@ -19,10 +19,10 @@
         </a>
         <!-- Profile header -->
         <header>
-            <img src="{{ asset('images/cover.png') }}" alt="" />
+            <img src="{{ Vite::asset('resources/images/cover.png') }}" alt="" />
             <div class="-mt-10 flex flex-wrap items-end justify-between gap-4 md:-mt-16">
                 <div class="flex items-end gap-4">
-                    <img src="{{ asset('images/adrian.png') }}" alt="Avatar for Adrian" class="size-20 object-cover md:size-32" />
+                    <img src="{{ Vite::asset('resources/images/adrian.png') }}" alt="Avatar for Adrian" class="size-20 object-cover md:size-32" />
                     <div class="flex flex-col text-sm md:gap-1">
                         <p class="text-lg md:text-xl">_adrian</p>
                         <p class="text-pixl-light/60 text-sm">@tudssss</p>
@@ -77,7 +77,7 @@
             <p class="text-center">That's all, folks!</p>
             <hr class="border-pixl-light/10 my-4" />
             <!-- White noise -->
-            <div class="h-20 bg-[url(/public/images/white-noise.gif)]"></div>
+            <div class="h-20 bg-[url(/resources/images/white-noise.gif)]"></div>
         </footer>
     </main>
 

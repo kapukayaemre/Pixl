@@ -4,7 +4,7 @@
         @foreach($artists as $artist)
             <li class="flex items-center justify-between gap-4">
                 <div class="flex items-center gap-2.5">
-                    <img src="/images/{{ $artist['img'] }}" alt="Avatar of {{ $artist['name'] }}" class="size-8 object-cover" />
+                    <img src="{{ Vite::asset("resources/images/{$artist['img']}") }}" alt="Avatar of {{ $artist['name'] }}" class="size-8 object-cover" />
                     <p class="truncate text-sm">{{ $artist['name'] }}</p>
                 </div>
 
