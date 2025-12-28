@@ -1,9 +1,11 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Vite;
 
 Route::get('/', fn() => view('welcome'));
+
 Route::get('feed', function () {
     $simonImage = Vite::asset('resources/images/simon-chilling.png');
 
@@ -100,3 +102,5 @@ Route::get('profile', function () {
         'feedItems' => $feedItems
     ]);
 });
+
+Route::get('/{profile:handle}', [ProfileController::class, 'show'])->name('profiles.show');
