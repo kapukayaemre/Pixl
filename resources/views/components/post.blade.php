@@ -1,8 +1,8 @@
 <li class="flex items-start gap-4 not-first:pt-2.5">
-    <a href="/{{ $item->profile->handle }}" class="shrink-0">
+    <a href="/{{ $post->profile->handle }}" class="shrink-0">
         <img
-            src="{{ $item->profile->avatar_url }}"
-            alt="Avatar for {{ $item->profile->display_name }}"
+            src="{{ $post->profile->avatar_url }}"
+            alt="Avatar for {{ $post->profile->display_name }}"
             class="size-10 object-cover"
         />
     </a>
@@ -13,11 +13,11 @@
             <div class="flex items-center justify-between gap-4">
                 <div class="flex items-center gap-2.5">
                     <p>
-                        <a href="/{{ $item->profile->handle }}" class="hover:underline">{{ $item->profile->display_name }}</a>
+                        <a href="/{{ $post->profile->handle }}" class="hover:underline">{{ $post->profile->display_name }}</a>
                     </p>
-                    <p class="text-pixl-light/40 text-xs">{{ $item->created_at }}</p>
+                    <p class="text-pixl-light/40 text-xs">{{ $post->created_at }}</p>
                     <p>
-                        <a href="/{{ $item->profile->handle }}" class="text-pixl-light/40 hover:text-pixl-light/60 text-xs">{{ $item->profile->handle }}</a>
+                        <a href="/{{ $post->profile->handle }}" class="text-pixl-light/40 hover:text-pixl-light/60 text-xs">{{ $post->profile->handle }}</a>
                     </p>
                 </div>
 
@@ -30,11 +30,14 @@
 
             <!-- Post content -->
             <div class="[&_a]:text-pixl mt-4 flex flex-col gap-3 text-sm [&_a]:hover:underline">
-                {!! $item->content !!}
+                {!! $post->content !!}
 
-                @if($item->isRepost() && $item->content !== null)
+                @if($post->isRepost() && $post->content !== null)
                     <ul>
-                        @include('partials.profile.post', ['item' => $item->repostOf])
+                        <x-post
+                            :post="$post->repostOf"
+                            :show-engagement="false"
+                        />
                     </ul>
                 @endif
             </div>
@@ -62,7 +65,7 @@
                                 </defs>
                             </svg>
                         </button>
-                        <span class="text-sm">{{ $item->likes_count }}</span>
+                        <span class="text-sm">{{ $post->likes_count }}</span>
                     </div>
 
                     <!-- Comment -->
@@ -91,7 +94,7 @@
                                 </defs>
                             </svg>
                         </button>
-                        <span class="text-sm">{{ $item->replies_count }}</span>
+                        <span class="text-sm">{{ $post->replies_count }}</span>
                     </div>
 
                     <!-- Re-post -->
@@ -125,7 +128,7 @@
                                 <path fill="currentColor" d="M15.714 5.286h-1.428v1.429h1.428V5.286Zm-1.428 0h-1.428v1.429h1.428V5.286Zm-1.43 0h-1.428v1.429h1.428V5.286Z" />
                             </svg>
                         </button>
-                        <span class="text-sm">{{ $item->reposts_count }}</span>
+                        <span class="text-sm">{{ $post->reposts_count }}</span>
                     </div>
                 </div>
 
@@ -189,5 +192,17 @@
                 </div>
             </div>
         </div>
+
+        @if($showReplies)
+            <!-- Threaded replies -->
+            <ol>
+                <!-- Reply -->
+                @foreach($post->replies as $reply)
+                    <x-reply
+                        :post="$reply"
+                    />
+                @endforeach
+            </ol>
+        @endif
     </div>
 </li>
